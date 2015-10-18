@@ -24,8 +24,9 @@ For this part of the assignment, we ignore the missing values in the dataset.
 
 1. Calculate the total number of steps taken per day.
 
+
 ```r
-library(dplyr)
+     library(dplyr)
 ```
 
 ```
@@ -42,8 +43,8 @@ library(dplyr)
 ```
 
 ```r
-total_steps_per_day <- summarise(group_by(data,date), total.steps = sum(steps, na.rm = TRUE))
-total_steps_per_day
+     total_steps_per_day <- summarise(group_by(data,date), total.steps = sum(steps, na.rm = TRUE))
+     total_steps_per_day
 ```
 
 ```

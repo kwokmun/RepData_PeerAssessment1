@@ -83,7 +83,7 @@ head(data)</code></pre>
 <ol style="list-style-type: decimal">
 <li>Calculate the total number of steps taken per day.</li>
 </ol>
-<pre class="r"><code>library(dplyr)</code></pre>
+<pre class="r"><code>     library(dplyr)</code></pre>
 <pre><code>## 
 ## Attaching package: 'dplyr'
 ## 
@@ -94,8 +94,8 @@ head(data)</code></pre>
 ## The following objects are masked from 'package:base':
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>total_steps_per_day &lt;- summarise(group_by(data,date), total.steps = sum(steps, na.rm = TRUE))
-total_steps_per_day</code></pre>
+<pre class="r"><code>     total_steps_per_day &lt;- summarise(group_by(data,date), total.steps = sum(steps, na.rm = TRUE))
+     total_steps_per_day</code></pre>
 <pre><code>## Source: local data frame [61 x 2]
 ## 
 ##          date total.steps

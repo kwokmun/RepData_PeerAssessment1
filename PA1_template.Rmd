@@ -18,11 +18,11 @@ For this part of the assignment, we ignore the missing values in the dataset.
 
 1. Calculate the total number of steps taken per day.
 
-     ```{r}
+```{r}
      library(dplyr)
      total_steps_per_day <- summarise(group_by(data,date), total.steps = sum(steps, na.rm = TRUE))
      total_steps_per_day
-     ```
+```
 
 2. Make a histogram of the total number of steps taken each day.
 

@@ -24,67 +24,67 @@ For this part of the assignment, we ignore the missing values in the dataset.
 
 1. Calculate the total number of steps taken per day.
 
-
-```r
-     library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
-     total_steps_per_day <- summarise(group_by(data,date), total.steps = sum(steps, na.rm = TRUE))
-     total_steps_per_day
-```
-
-```
-## Source: local data frame [61 x 2]
-## 
-##          date total.steps
-## 1  2012-10-01           0
-## 2  2012-10-02         126
-## 3  2012-10-03       11352
-## 4  2012-10-04       12116
-## 5  2012-10-05       13294
-## 6  2012-10-06       15420
-## 7  2012-10-07       11015
-## 8  2012-10-08           0
-## 9  2012-10-09       12811
-## 10 2012-10-10        9900
-## ..        ...         ...
-```
+    
+    ```r
+    library(dplyr)
+    ```
+    
+    ```
+    ## 
+    ## Attaching package: 'dplyr'
+    ## 
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+    ## 
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+    ```
+    
+    ```r
+    total_steps_per_day <- summarise(group_by(data,date), total.steps = sum(steps, na.rm = TRUE))
+    total_steps_per_day
+    ```
+    
+    ```
+    ## Source: local data frame [61 x 2]
+    ## 
+    ##          date total.steps
+    ## 1  2012-10-01           0
+    ## 2  2012-10-02         126
+    ## 3  2012-10-03       11352
+    ## 4  2012-10-04       12116
+    ## 5  2012-10-05       13294
+    ## 6  2012-10-06       15420
+    ## 7  2012-10-07       11015
+    ## 8  2012-10-08           0
+    ## 9  2012-10-09       12811
+    ## 10 2012-10-10        9900
+    ## ..        ...         ...
+    ```
 
 2. Make a histogram of the total number of steps taken each day.
 
-
-```r
-library(ggplot2)
-ggplot(data = total_steps_per_day, aes(x = total.steps)) + geom_histogram(binwidth = 2000) + ggtitle("Distribution of total number of steps taken per day") + xlab("Steps taken per day") + ylab("Number of days") + scale_x_continuous(breaks = seq(0,24000,2000))
-```
-
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+    
+    ```r
+    library(ggplot2)
+    ggplot(data = total_steps_per_day, aes(x = total.steps)) + geom_histogram(binwidth = 2000) + ggtitle("Distribution of total number of steps taken per day") + xlab("Steps taken per day") + ylab("Number of days") + scale_x_continuous(breaks = seq(0,24000,2000))
+    ```
+    
+    ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
-Mean of the total number of steps taken per day:
-
-```r
-round(mean(total_steps_per_day$total.steps))
-```
-
-```
-## [1] 9354
-```
+    Mean of the total number of steps taken per day:
+    
+    ```r
+    round(mean(total_steps_per_day$total.steps))
+    ```
+    
+    ```
+    ## [1] 9354
+    ```
 
 Median of the total number of steps taken per day:
 

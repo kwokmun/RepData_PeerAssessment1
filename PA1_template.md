@@ -205,6 +205,8 @@ median(total_steps_per_day_recalc$total.steps)
 ## [1] 10762
 ```
 
+The mean and median differ from the estimates of the first part of the assignment in that the values now are a bit higher. The mean and median are also much closer to each other than the estimates. By imputing the missing values, we're are able to provide better estimates based on historical data.
+
 ## Are there differences in activity patterns between weekdays and weekends?
 
 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
@@ -219,7 +221,7 @@ testdata_avg <- mutate(testdata_avg, day_type = as.factor(ifelse(weekdays(date) 
 
 ```r
 avg_steps_by_interval_recalc <- summarise(group_by(testdata_avg, interval, day_type), avg.steps = mean(steps))
-ggplot(data = avg_steps_by_interval_recalc, aes(x = interval, y = avg.steps)) + geom_line() + facet_grid(day_type ~ .)
+ggplot(data = avg_steps_by_interval_recalc, aes(x = interval, y = avg.steps)) + geom_line() + facet_grid(day_type ~ .) + ylab("Average number of steps taken")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-15-1.png) 
